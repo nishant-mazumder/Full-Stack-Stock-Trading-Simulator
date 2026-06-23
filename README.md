@@ -1,4 +1,4 @@
-# Trading Platform Dashboard & Landing Page
+# Full-Stack Stock Trading Simulator
 
 ## Overview
 This project is a comprehensive full-stack stock trading platform that features a beautiful, dynamic landing page and a feature-rich user dashboard. It allows users to view their portfolio, track mock holdings and positions, and explore various financial products. The platform is designed with a modern, responsive UI and a robust backend API.
@@ -91,4 +91,4 @@ Here are the visual results of the completed project:
 - **Complete Authentication:** Fully implement the Passport.js logic to secure the dashboard behind a login wall.
 - **Live Market Data:** Integrate a third-party stock market API (like AlphaVantage or Yahoo Finance) to replace the mock data with real-time stock prices.
 - **Order Execution Engine:** Build out the backend logic to match buy/sell orders and simulate a real exchange environment.
-- **Dark Mode:** Implement a system-wide dark mode toggle for both the landing page and the trading dashboard.
+
