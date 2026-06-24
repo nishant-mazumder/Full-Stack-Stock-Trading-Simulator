@@ -11,6 +11,41 @@ This project is a comprehensive full-stack stock trading platform that features 
 - **RESTful API:** A backend service that supplies data to the frontend, complete with Mongoose schemas for Holdings, Positions, and Orders.
 
 ## System Architecture
+
+```mermaid
+flowchart LR
+    subgraph Users
+        U1([Public User])
+        U2([Authenticated Trader])
+    end
+
+    subgraph Frontend["Frontend Layer (React.js)"]
+        F["Landing Pages<br/>PORT 3000"]:::react
+        D["Trading Dashboard<br/>PORT 3001"]:::react
+    end
+
+    subgraph BackendLayer["Backend Layer (Node.js)"]
+        API["Express API Server<br/>PORT 3002"]:::node
+    end
+
+    subgraph DatabaseLayer["Data Layer"]
+        DB[("MongoDB<br/>(Holdings, Orders, Positions)")]:::mongo
+    end
+
+    U1 -->|"Visits"| F
+    U2 -->|"Interacts with"| D
+
+    F -.->|"Marketing Data"| API
+    D <-->|"Trade Orders & Data"| API
+
+    API <-->|"Read/Write"| DB
+
+    classDef react fill:#e3f2fd,stroke:#1e88e5,stroke-width:2px,color:#0d47a1
+    classDef node fill:#e8f5e9,stroke:#43a047,stroke-width:2px,color:#1b5e20
+    classDef mongo fill:#fff3e0,stroke:#fb8c00,stroke-width:2px,color:#e65100
+    classDef default fill:#fafafa,stroke:#bdbdbd,stroke-width:1px,color:#212121
+```
+
 The application follows a standard MERN stack architecture with a clear separation of concerns:
 1. **Frontend Server:** Serves the static landing pages, marketing content, and signup flows.
 2. **Dashboard Server:** A specialized Single Page Application (SPA) for authenticated users to view their trading data.
